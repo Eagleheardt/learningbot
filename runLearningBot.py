@@ -26,6 +26,10 @@ def __should_handle(user=__self_user_id, text=''):
         and len(text) is not 0)
 
 def handle_message(data, web_client):
+    text = data['text']
+    user = data['user']
+    channel = data['channel']
+    ts = data['ts']
     # message handling code here
     if data['text'] == "!test":
         send_simple_message(web_client, data['channel'],"test!")
