@@ -1,4 +1,3 @@
-import cryptography
 from cryptography.fernet import Fernet
 
 MAIN_KEY = None

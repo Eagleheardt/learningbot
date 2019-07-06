@@ -27,6 +27,9 @@ def __should_handle(user=__self_user_id, text=''):
 
 def handle_message(data, web_client):
     # message handling code here
+    if data['text'] == "!test":
+        send_simple_message(web_client, data['channel'],"test!")
+        return
     return
 
 def start_scheduler():
