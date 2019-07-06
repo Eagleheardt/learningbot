@@ -1,2 +1,2 @@
 # learningbot
-Learn how to slackbot
+Learn how to slackbot.
