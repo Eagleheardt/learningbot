@@ -31,9 +31,13 @@ def handle_message(data, web_client):
     channel = data['channel']
     ts = data['ts']
     # message handling code here
-    if data['text'] == "!test":
-        send_simple_message(web_client, data['channel'],"test!")
+    if text == "!test":
+        send_simple_message(web_client, channel,"I see your test {}!".format(user))
         return
+    if text == "!oi":
+        send_simple_message(web_client, channel,"This is a thread.", ts)
+        return
+
     return
 
 def start_scheduler():
