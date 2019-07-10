@@ -88,7 +88,7 @@ if __name__ == '__main__':
                 print("Learning bot is connected!")
                 break
             except Exception:
-                print("Failed to connect to Slack; retrying in 5 seconds")
+                print("Failed to connect to Slack; retrying in 5 seconds\n\n\n\n\n")
                 time.sleep(5)
         
         asyncio.gather(__rtm_future, schedule_monitor())
