@@ -58,12 +58,12 @@ if __name__ == '__main__':
 
     __web_client = None
 
-    async def schedule_monitor():
+    def schedule_monitor():
         while True:
             schedule.run_pending()
-            await asyncio.sleep(15) # 15 seconds
+            asyncio.sleep(15) # 15 seconds
 
-    async def main():
+    def main():
         @RTMClient.run_on(event='message')
         def handle(web_client=None, data=None, **kwargs):
             print(f'Message data: {data}')
@@ -73,8 +73,8 @@ if __name__ == '__main__':
         
         global __web_client
 
-        __web_client = WebClient(token=__slack_token, run_async=True)
-        __rtm_client = RTMClient(token=__slack_token, run_async=True)
+        __web_client = WebClient(token=__slack_token)
+        __rtm_client = RTMClient(token=__slack_token)
         __rtm_future = None
 
         while True:
