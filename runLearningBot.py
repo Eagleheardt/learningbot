@@ -89,7 +89,7 @@ if __name__ == '__main__':
                 break
             except Exception:
                 print("Failed to connect to Slack; retrying in 5 seconds")
-                asyncio.sleep(5)
+                time.sleep(5)
         
         asyncio.gather(__rtm_future, schedule_monitor())
 
