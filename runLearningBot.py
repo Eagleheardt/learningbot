@@ -1,5 +1,6 @@
 import asyncio
 import schedule
+import time
 
 from slack import RTMClient, WebClient
 
@@ -65,7 +66,7 @@ if __name__ == '__main__':
     def schedule_monitor():
         while True:
             schedule.run_pending()
-            asyncio.sleep(15) # 15 seconds
+            time.sleep(15) # 15 seconds
 
     def main():
         @RTMClient.run_on(event='message')
